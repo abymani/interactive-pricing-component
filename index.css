@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
+:root {
+
+/* ### Primary */
+
+--Soft-Cyan-Full-Slider-Bar: hsl(174, 77%, 80%);
+--StrongCyan-Slider-Backround: hsl(174, 86%, 45%);
+--Light-Grayish-Red-Discount-Background: hsl(14, 92%, 95%);
+--Light-Red-Discount-Text: hsl(15, 100%, 70%);
+--Pale-Blue-CTA-Text: hsl(226, 100%, 87%);
+
+/* ### Neutral */
+
+--White-Pricing-Component-Background: hsl(0, 0%, 100%);
+--Very-Pale-Blue-Main-Background: hsl(230, 100%, 99%);
+--Light-Grayish-Blue-Empty-Slider-Bar: hsl(224, 65%, 95%);
+--Light-Grayish-Blue-Toggle-Background: hsl(223, 50%, 87%);
+--Grayish-Blue-Text: hsl(225, 20%, 60%);
+--Dark-Desaturated-Blue-Text-CTA-Background: hsl(227, 35%, 25%);
+
+
+--Font-size-Introductory-Paragraph: 15px;
+--ff-manrope: 'Manrope', sans-serif;
+--fw-light:400;
+--fw-semibold:600;
+--fw-bold:800;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-manrope);
+    font-weight: var(--fw-semibold);
+}
+  /* setting root font-size */
+html {
+  font-size: 15px;
+}
+p,span,li {
+  font-size: 1rem;
+  color: hsla(227, 35%, 25%,0.7);
+}
+
+body {
+    background-color: var(--Very-Pale-Blue-Main-Background);
+    background-image: url(./images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position:relative;
+}
+
+header {
+  background-image: url(./images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: 8rem;
+  background-position: 12rem;
+  padding: 3rem;
+  margin-bottom: 1rem;
+}
+  header h1 {
+    font-size: 2rem;
+    text-align:center;
+    color: var(--Dark-Desaturated-Blue-Text-CTA-Background);
+  }
+  header p {
+    color: var(--Grayish-Blue-Text);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  
+main {
+  width: calc(100vw/2.6);
+  min-width: 450px;
+  height: calc(100vh/2.6);
+  min-height: 340px;
+  background-color: var(--White-Pricing-Component-Background);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px hsla(225, 20%, 60%,0.3);
+}
+
+/* card top styling which contains pricing and pageviews */
+  .card-top {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+    .pageviews {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-right: auto;
+    }
+    .price {
+      color: var(--Dark-Desaturated-Blue-Text-CTA-Background);
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-right: 3px;
+    }
+
+    /* card middle styling which contains slider and toggle switch */
+
+  .card-middle {
+    padding-inline: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+                /* ...........
+                slider
+                .......... */
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin-bottom: 2rem;
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none; /* Override default CSS styles*/
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 0.5rem; /* Specified height */
+    border-radius: 50px;
+    background: linear-gradient(90deg,var(--StrongCyan-Slider-Backround) 50%,var(--Light-Grayish-Blue-Empty-Slider-Bar) 50%); /* Grey background */
+    outline: none; /* Remove outline*/
+    opacity: 0.7;
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+    
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background-color: var(--StrongCyan-Slider-Backround);
+    background-image: url(./images/icon-slider.svg); /* Green background */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    padding: 1.3rem;
+    /* opacity: 1 !important; */
+    box-shadow: 0px 5px 15px 2px hsl(174, 86%, 45%);
+    cursor: pointer; /* Cursor on hover */
+  }
+  .slider::-webkit-slider-thumb:hover {
+    opacity: 1;
+    background-color: rgb(65, 237, 219);
+  }
+  .slider::-webkit-slider-thumb:active{
+    cursor:grabbing;
+    opacity: 1;
+    background-color: hsl(175, 98%, 35%);
+  }
+  
+  /* ...........
+  Toggle switch
+  .............. */
+
+
+  /* The switch - the box around the slider*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.7rem;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Light-Grayish-Blue-Toggle-Background);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 1.1rem;
+  width: 1.1rem;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .toggle {
+  background-color: var(--StrongCyan-Slider-Backround);
+}
+
+input:focus + .toggle {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .toggle:before {
+  -webkit-transform: translateX(1rem);
+  -ms-transform: translateX(1rem);
+  transform: translateX(1rem);
+}
+
+/* Rounded sliders */
+.toggle.round {
+  border-radius: 34px;
+}
+
+.toggle.round:before {
+  border-radius: 50%;
+} 
+
+
+.change-plan {
+  display: flex;
+  justify-content: flex-end;
+}
+.change-plan span {
+    font-size: 0.9rem;
+    padding-inline: 0.5rem;
+  }
+  .discount {
+    background-color: var(--Light-Grayish-Red-Discount-Background);
+    color: var(--Light-Red-Discount-Text);
+    border-radius: 50px;
+    font-size: 0.8rem !important;
+    padding: 0.2rem;
+  }
+  .discount::after {
+    content: "25% discount";
+  }
+
+.card-bottom {
+  border-top: 1px solid hsla(225, 20%, 60%,0.2);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+}
+ul {
+  list-style-image: url(./images/icon-check.svg);
+
+}
+  ul li {
+    padding-left: 1rem; 
+    font-size: 0.9rem;
+  }
+  ul li:not(:last-child) {
+    margin-bottom: 0.4rem;
+  }
+  .start-trial-btn {
+    padding: 0.5rem 2rem;
+    border: 0px;
+    margin: 0;
+    border-radius: 50px;
+    height: fit-content;
+    width: fit-content;
+    color: var(--Pale-Blue-CTA-Text);
+    background-color: var(--Dark-Desaturated-Blue-Text-CTA-Background);
+  }
+  .start-trial-btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: white;
+  }
+
+  footer {
+    position:absolute;
+    bottom:10px;
+    width:100%;
+  }
+
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media screen and (max-width:900px) and (min-width:600px){
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:600px) and (min-width:375px) {
+  html {
+    font-size: 13px;
+  }
+}
+  @media screen and (max-width:375px) {
+    html {
+      font-size: 12px;
+    }
+    body {
+      height: fit-content;
+    }
+    header{
+      padding: 4rem 1rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      background-position:10rem;
+      background-size:10rem;
+    }
+      header h1 {
+        font-size:1.7rem;
+      }
+      header p {
+        width:60%;
+      }
+    main {
+      width: 90%;
+      min-width: 0;
+      height: auto;
+      min-height: 0;
+      position: relative;
+      margin-bottom: 6rem;
+    }
+    .card-top {
+      flex-direction: column;
+      
+    }
+      .pageviews {
+        margin-right: unset;
+        margin-bottom: 7rem;
+      }
+      
+    .slidecontainer{
+      position: absolute;
+      top: 7rem;
+      width: 80%;
+    }
+    .change-plan {
+      /* justify-content: space-between; */
+    }
+    .discount::after {
+      content: "-25%";
+
+    }
+    .card-bottom {
+      flex-direction: column;
+      gap: 2rem;
+    }
+}

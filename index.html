@@ -5,35 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+
   <title>Frontend Mentor | Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
+  <header>
+    <h1> Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required. </p>
+  </header>
+  <main>
+    <div class="card-top">
+      <p class="pageviews" id="views">100k Pageviews</p>
+      <span class="price" id="price">$16.00</span>
+      <span  id="plan">/month</span>
+    </div>
+    <div class="card-middle">
+      <div class="slidecontainer">
+        <input type="range" min="1" max="200" value="100" class="slider" id="myRange">
+      </div>
+      <div class="change-plan">
+        <span>Monthly Billing</span>
+        <label class="switch">
+          <input type="checkbox" id="myToggle">
+          <span class="toggle round"></span>
+        </label>
+        <span>Yearly Billing</span>
+        <span class="discount"> </span>
+      </div>
+    </div>
+    <div class="card-bottom">
+      <ul>
+        <li>Unlimited websites</li>
+        <li>100% data ownership</li>
+        <li>Email reports</li>
+      </ul>
+      <button class="start-trial-btn">Start my trial</button>
+    </div>
+  </main>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.twitter.com/abymani1">Abdul rehman</a>.
+    </div>
+  </footer>
 </body>
 </html>
